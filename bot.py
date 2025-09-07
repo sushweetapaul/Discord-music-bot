@@ -459,10 +459,10 @@ async def on_command_error(ctx, error):
         await ctx.send("❌ An error occurred while processing the command.")
 
 if __name__ == "__main__":
-    token = os.getenv('DISCORD_TOKEN')
+    token = os.getenv('MTM5MTI1Nzc5ODIzODUzOTc3Ng.Gh7UJ2.tKkbNYlUdV3fftrHGmIIN_TsqarpIcTr84AlKU')
     if not token:
         print("❌ DISCORD_TOKEN environment variable not set!")
-        print("Set it with: export DISCORD_TOKEN='your_bot_token_here'")
+        print("Set it with: export DISCORD_TOKEN='MTM5MTI1Nzc5ODIzODUzOTc3Ng.Gh7UJ2.tKkbNYlUdV3fftrHGmIIN_TsqarpIcTr84AlKU'")
         sys.exit(1)
     
     print("🚀 Starting Auralux Music Bot...")
