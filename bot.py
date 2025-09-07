@@ -8,8 +8,8 @@ import discord
 from discord.ext import commands, tasks
 import asyncio
 import yt_dlp
-import spotify
-from spotify.oauth2 import SpotifyClientCredentials
+import spotipy
+from spotipy.oauth2 import SpotipyClientCredentials
 import os
 from collections import deque
 import sys
