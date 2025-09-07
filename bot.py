@@ -9,7 +9,7 @@ from discord.ext import commands, tasks
 import asyncio
 import yt_dlp
 import spotipy
-from spotipy.oauth2 import SpotipyClientCredentials
+from spotipy.oauth2 import SpotifyClientCredentials
 import os
 from collections import deque
 import sys
