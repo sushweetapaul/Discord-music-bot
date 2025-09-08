@@ -4,6 +4,7 @@ Auralux Discord Music Bot
 A feature-rich Discord music bot with YouTube and Spotify integration
 """
 
+from keep_alive import keep_alive
 import discord
 from discord.ext import commands, tasks
 import asyncio
