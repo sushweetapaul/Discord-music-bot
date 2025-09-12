@@ -15,6 +15,14 @@ import os
 from collections import deque
 import sys
 
+def main():
+    keep_alive()  # 👈 this starts Flask server first
+    token = os.getenv('DISCORD_TOKEN')
+    if not token:
+        print("❌ DISCORD_TOKEN env var is not set.")
+        sys.exit(1)
+    bot.run('DISCORD_TOKEN') 
+    
 # Load opus library properly on Linux
 try:
     discord.opus.load_opus('libopus.so.0')
