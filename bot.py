@@ -9,8 +9,8 @@ import discord
 from discord.ext import commands, tasks
 import asyncio
 import yt_dlp
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+#import spotipy
+#from spotipy.oauth2 import SpotifyClientCredentials
 import os
 from collections import deque
 import sys
@@ -86,19 +86,19 @@ ytdl = yt_dlp.YoutubeDL(ytdl_format_options)
 ytdl_hq = yt_dlp.YoutubeDL(ytdl_format_options_hq)
 
 # Spotify client (optional - set credentials in environment)
-spotify = None
-try:
-    if os.getenv('SPOTIFY_CLIENT_ID') and os.getenv('SPOTIFY_CLIENT_SECRET'):
-        client_credentials_manager = SpotifyClientCredentials(
-            client_id=os.getenv('SPOTIFY_CLIENT_ID'),
-            client_secret=os.getenv('SPOTIFY_CLIENT_SECRET')
-        )
-        spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-        print("✅ Spotify integration enabled")
-    else:
-        print("⚠️ Spotify credentials not found. Only YouTube search available.")
-except Exception as e:
-    print(f"⚠️ Spotify setup failed: {e}")
+#spotify = None
+#try:
+    #if os.getenv('SPOTIFY_CLIENT_ID') and os.getenv('SPOTIFY_CLIENT_SECRET'):
+      #  client_credentials_manager = SpotifyClientCredentials(
+        #    client_id=os.getenv('SPOTIFY_CLIENT_ID'),
+        #    client_secret=os.getenv('SPOTIFY_CLIENT_SECRET')
+     #   )
+     #   spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+    #    print("✅ Spotify integration enabled")
+  #  else:
+    #    print("⚠️ Spotify credentials not found. Only YouTube search available.")
+#except Exception as e:
+ #   print(f"⚠️ Spotify setup failed: {e}")
 
 def is_premium(ctx):
     """Check if user or server has premium access"""
@@ -115,27 +115,27 @@ async def search_youtube(query):
         print(f"YouTube search error: {e}")
     return None
 
-async def search_spotify(query):
-    """Search Spotify for a song"""
-    if not spotify:
-        return None
+#async def search_spotify(query):
+ #   """Search Spotify for a song"""
+ #   if not spotify:
+    #    return None
     
-    try:
-        results = spotify.search(q=query, type='track', limit=1)
-        if results and 'tracks' in results and results['tracks']['items']:
-            track = results['tracks']['items'][0]
-            search_query = f"{track['artists'][0]['name']} {track['name']}"
-            return await search_youtube(search_query)
-    except Exception as e:
-        print(f"Spotify search error: {e}")
-    return None
+#    try:
+   #     results = spotify.search(q=query, type='track', limit=1)
+  #      if results and 'tracks' in results and results['tracks']['items']:
+ #           track = results['tracks']['items'][0]
+   #         search_query = f"{track['artists'][0]['name']} {track['name']}"
+       #     return await search_youtube(search_query)
+  #  except Exception as e:
+     #   print(f"Spotify search error: {e}")
+    #return None
 
 async def get_song_info(query, high_quality=False):
     """Get song information from YouTube or Spotify"""
     song_info = await search_youtube(query)
     
-    if not song_info:
-        song_info = await search_spotify(query)
+ #   if not song_info:
+  #      song_info = await search_spotify(query)
     
     if song_info:
         if high_quality:
