@@ -58,7 +58,7 @@ ytdl_format_options = {
     'default_search': 'ytsearch1:',
     'extractaudio': False,
     'skip_download': True
-    'cookiefile': 'cookies.txt'
+    'cookiefile': 'cookies.txt', 
 }
 
 # YT-DLP configuration for high quality (premium users)
@@ -75,7 +75,7 @@ ytdl_format_options_hq = {
     'default_search': 'ytsearch1:',
     'extractaudio': False,
     'skip_download': True
-    'cookiefile': 'cookies.txt'
+    'cookiefile': 'cookies.txt', 
 }
 
 # FFmpeg options for audio processing
