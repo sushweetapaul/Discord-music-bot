@@ -57,7 +57,7 @@ ytdl_format_options = {
     'no_warnings': True,
     'default_search': 'ytsearch1:',
     'extractaudio': False,
-    'skip_download': True
+    'skip_download': True, 
     'cookiefile': 'cookies.txt', 
 }
 
@@ -74,7 +74,7 @@ ytdl_format_options_hq = {
     'no_warnings': True,
     'default_search': 'ytsearch1:',
     'extractaudio': False,
-    'skip_download': True
+    'skip_download': True, 
     'cookiefile': 'cookies.txt', 
 }
 
