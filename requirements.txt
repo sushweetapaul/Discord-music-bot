@@ -1,5 +1,5 @@
 discord.py
 yt-dlp
 flask
-spotipy
+alothttp
 ffmpeg
